@@ -1,0 +1,454 @@
+/* Grant van Zyl — portfolio.
+   The identity is a duty board: hairline rules, mono record columns, one amber
+   signal. Prose is set in a serif and DATA is set in mono, because those are two
+   different kinds of reading and the split is the information design. */
+
+/* ---- tokens: light is the base, dark redefines only these -------------- */
+:root {
+  --bg:      #eceef2;
+  --surface: #f7f8fa;
+  --sunk:    #e3e6ec;
+  --fg:      #131a24;
+  --muted:   #596575;
+  --faint:   #7c8899;
+  --line:    #ced5df;
+  --hair:    #dde2ea;
+  --acc:     #9a5405;   /* burnt amber: AA on the light ground */
+  --acc-soft:#f0a83a;   /* the signal itself, for fills and dots */
+  --good:    #1c6b58;
+  --shadow:  0 1px 2px rgba(19, 26, 36, .06), 0 8px 24px -12px rgba(19, 26, 36, .18);
+
+  --ui:   'Archivo', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --text: 'Newsreader', ui-serif, Georgia, 'Times New Roman', serif;
+  --mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  --wrap: 1080px;
+  --rail: 176px;
+  --step: clamp(56px, 7vw, 96px);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg:      #0d1219;
+    --surface: #141c26;
+    --sunk:    #0a0f15;
+    --fg:      #d7dee7;
+    --muted:   #8d9bac;
+    --faint:   #6d7c8e;
+    --line:    #24313f;
+    --hair:    #1b2531;
+    --acc:     #f0a83a;
+    --acc-soft:#f0a83a;
+    --good:    #5cbfa2;
+    --shadow:  0 1px 2px rgba(0, 0, 0, .4), 0 12px 32px -16px rgba(0, 0, 0, .7);
+  }
+}
+
+:root[data-theme="dark"] {
+  --bg:      #0d1219;
+  --surface: #141c26;
+  --sunk:    #0a0f15;
+  --fg:      #d7dee7;
+  --muted:   #8d9bac;
+  --faint:   #6d7c8e;
+  --line:    #24313f;
+  --hair:    #1b2531;
+  --acc:     #f0a83a;
+  --acc-soft:#f0a83a;
+  --good:    #5cbfa2;
+  --shadow:  0 1px 2px rgba(0, 0, 0, .4), 0 12px 32px -16px rgba(0, 0, 0, .7);
+}
+
+/* ---- base -------------------------------------------------------------- */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--text);
+  font-size: 17px;
+  line-height: 1.62;
+  font-optical-sizing: auto;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--acc); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+a:hover { text-decoration-thickness: 2px; }
+
+:focus-visible {
+  outline: 2px solid var(--acc-soft);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+img { max-width: 100%; display: block; }
+
+::selection { background: var(--acc-soft); color: #131a24; }
+
+.wrap { width: 100%; max-width: var(--wrap); margin-inline: auto; padding-inline: clamp(20px, 5vw, 44px); }
+
+/* ---- the two kinds of type -------------------------------------------- */
+.h1, .h2, .h3 {
+  font-family: var(--ui);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -.02em;
+  text-wrap: balance;
+  margin: 0;
+}
+.h1 { font-size: clamp(46px, 9.5vw, 104px); font-variation-settings: 'wdth' 112; letter-spacing: -.035em; }
+.h2 { font-size: clamp(27px, 3.6vw, 40px); }
+.h3 { font-size: clamp(19px, 2.2vw, 23px); letter-spacing: -.012em; }
+
+.mono, .eyebrow, .rail, .meta, .chip, .stat-n, .btn, .tag {
+  font-family: var(--mono);
+  font-variant-numeric: tabular-nums;
+}
+
+.eyebrow {
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--faint);
+}
+
+.lede { font-size: clamp(19px, 2.1vw, 22px); line-height: 1.55; color: var(--fg); }
+p { margin: 0 0 1em; max-width: 66ch; }
+p:last-child { margin-bottom: 0; }
+
+/* ---- section scaffold -------------------------------------------------- */
+section { padding-block: var(--step); border-top: 1px solid var(--hair); }
+section:first-of-type { border-top: 0; }
+
+.sec-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px 16px;
+  margin-bottom: 40px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--line);
+}
+.sec-head .h2 { flex: 1 1 auto; min-width: 0; }
+/* The eyebrow may shrink and may wrap to its own line; it must never be the
+   thing that makes the page scroll sideways. */
+.sec-head .eyebrow { flex: 0 1 auto; min-width: 0; }
+
+/* ---- masthead ---------------------------------------------------------- */
+.masthead { padding-block: clamp(66px, 9vw, 96px) 0; }
+
+.name-rule {
+  height: 3px;
+  background: var(--acc-soft);
+  width: 100%;
+  transform-origin: left center;
+  margin-bottom: 22px;
+}
+
+.roles {
+  font-family: var(--ui);
+  font-weight: 500;
+  font-variation-settings: 'wdth' 90;
+  font-size: clamp(15px, 2.1vw, 20px);
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 20px 0 0;
+  max-width: none;
+}
+.roles b { color: var(--fg); font-weight: 600; }
+.roles span { color: var(--line); }
+
+/* the duty board: labelled cells, hairline dividers, tabular figures */
+.board {
+  margin-top: 40px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.board div {
+  padding: 14px 18px 16px;
+  border-left: 1px solid var(--hair);
+  min-width: 0;
+}
+.board div:first-child { border-left: 0; }
+.board dt {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--faint);
+  margin-bottom: 6px;
+}
+.board dd {
+  margin: 0;
+  font-family: var(--mono);
+  font-size: 13.5px;
+  font-variant-numeric: tabular-nums;
+  color: var(--fg);
+  line-height: 1.45;
+}
+.board dd.on { color: var(--good); }
+.dot {
+  display: inline-block;
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: var(--good);
+  margin-right: 7px;
+  vertical-align: 1px;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .dot { animation: pulse 2.6s ease-in-out infinite; }
+}
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: .35; } }
+
+.actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 18px;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: .04em;
+  text-decoration: none;
+  color: var(--fg);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  transition: background .16s ease, border-color .16s ease, transform .16s ease;
+}
+.btn:hover { border-color: var(--acc-soft); transform: translateY(-1px); }
+.btn.primary { background: var(--acc-soft); border-color: var(--acc-soft); color: #131a24; font-weight: 600; }
+.btn.primary:hover { filter: brightness(1.06); }
+@media (prefers-reduced-motion: reduce) { .btn:hover { transform: none; } }
+
+/* ---- the ledger: a mono rail against a prose column -------------------- */
+.rec { display: grid; grid-template-columns: var(--rail) 1fr; gap: 28px; padding-block: 30px; border-top: 1px solid var(--hair); }
+.rec:first-of-type { border-top: 0; padding-top: 0; }
+
+.rail { font-size: 12.5px; line-height: 1.55; color: var(--faint); }
+.rail .when { color: var(--fg); font-weight: 500; display: block; letter-spacing: -.01em; }
+.rail .where { display: block; margin-top: 4px; }
+
+.rec-body > .h3 { margin-bottom: 4px; }
+.employer { font-family: var(--mono); font-size: 13px; color: var(--acc); margin: 0 0 10px; }
+.blurb { font-size: 15.5px; color: var(--muted); font-style: italic; margin-bottom: 12px; max-width: 62ch; }
+
+.did { list-style: none; margin: 0; padding: 0; display: grid; gap: 7px; }
+.did li { position: relative; padding-left: 20px; max-width: 64ch; font-size: 16px; }
+.did li::before {
+  content: '';
+  position: absolute;
+  left: 2px; top: .62em;
+  width: 7px; height: 1px;
+  background: var(--acc-soft);
+}
+
+/* ---- the showcase ------------------------------------------------------ */
+.work { display: grid; gap: var(--step); }
+
+/* Two projects now, so each is a record with its own internal rhythm and a
+   rule between them — the section reads as a list rather than one long piece. */
+.proj { display: grid; gap: 34px; padding-top: var(--step); border-top: 1px solid var(--line); }
+.proj:first-child { padding-top: 0; border-top: 0; }
+
+.fine { font-family: var(--mono); font-size: 12.5px; line-height: 1.6; color: var(--faint); max-width: 58ch; }
+
+/* The pitch and the numbers are one thought — what it is, and how much of it
+   there is — so they share a row while there is width for two columns. */
+.pitch { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(300px, .85fr); gap: 40px; align-items: start; }
+.pitch .stats { grid-template-columns: 1fr 1fr; }
+.pitch .stats div:nth-child(odd) { border-left: 0; }
+.pitch .stats div:nth-child(n+3) { border-top: 1px solid var(--hair); }
+.pitch .stats .stat-n { font-size: 28px; }
+
+@media (max-width: 900px) {
+  .pitch { grid-template-columns: 1fr; gap: 30px; }
+}
+
+.shot {
+  border: 1px solid var(--line);
+  background: var(--sunk);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+.shot img { width: 100%; height: auto; }
+.shot figcaption {
+  font-family: var(--mono);
+  font-size: 11.5px;
+  line-height: 1.5;
+  color: var(--faint);
+  padding: 10px 14px;
+  border-top: 1px solid var(--hair);
+  background: var(--surface);
+}
+
+.shots { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(126px, 1fr));
+  border: 1px solid var(--line);
+  background: var(--surface);
+}
+.stats div { padding: 16px 18px; border-left: 1px solid var(--hair); }
+.stats div:first-child { border-left: 0; }
+.stat-n {
+  display: block;
+  font-family: var(--ui);
+  font-weight: 700;
+  font-variation-settings: 'wdth' 108;
+  font-size: 30px;
+  line-height: 1;
+  letter-spacing: -.03em;
+  color: var(--fg);
+}
+.stat-l {
+  display: block;
+  margin-top: 7px;
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--faint);
+  line-height: 1.4;
+}
+
+.notes { display: grid; gap: 18px; grid-template-columns: repeat(auto-fit, minmax(268px, 1fr)); }
+.note { border-left: 2px solid var(--line); padding-left: 18px; }
+.note h4 {
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--acc);
+  margin: 0 0 7px;
+}
+.note p { font-size: 15.5px; line-height: 1.55; color: var(--muted); max-width: none; }
+
+.wip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--acc);
+  border: 1px solid var(--acc-soft);
+  padding: 4px 10px;
+}
+
+/* ---- capabilities ------------------------------------------------------ */
+.caps { display: grid; gap: 0; }
+.cap { display: grid; grid-template-columns: var(--rail) 1fr; gap: 28px; padding-block: 20px; border-top: 1px solid var(--hair); }
+.cap:first-child { border-top: 0; padding-top: 0; }
+.cap h3 {
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--faint);
+  margin: 3px 0 0;
+}
+.tags { display: flex; flex-wrap: wrap; gap: 7px; margin: 0; padding: 0; list-style: none; }
+.tag {
+  font-size: 12.5px;
+  padding: 5px 10px;
+  border: 1px solid var(--hair);
+  background: var(--surface);
+  color: var(--fg);
+  line-height: 1.3;
+}
+
+/* ---- contact ----------------------------------------------------------- */
+.contact { display: grid; grid-template-columns: 1fr auto; gap: 32px; align-items: end; }
+footer {
+  border-top: 1px solid var(--hair);
+  padding-block: 30px 44px;
+  font-family: var(--mono);
+  font-size: 11.5px;
+  color: var(--faint);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  justify-content: space-between;
+}
+footer a { color: var(--faint); }
+
+/* ---- theme toggle ------------------------------------------------------ */
+.theme {
+  position: fixed;
+  top: 14px; right: 14px;
+  z-index: 20;
+  width: 38px; height: 38px;
+  display: grid;
+  place-items: center;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  color: var(--muted);
+  cursor: pointer;
+  font-family: var(--mono);
+  font-size: 14px;
+  line-height: 1;
+}
+.theme:hover { color: var(--acc); border-color: var(--acc-soft); }
+
+/* ---- entrance ---------------------------------------------------------- */
+@media (prefers-reduced-motion: no-preference) {
+  .name-rule { animation: draw .9s cubic-bezier(.16, 1, .3, 1) both; }
+  @keyframes draw { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+
+  .rise { opacity: 0; transform: translateY(14px); }
+  .rise.in { opacity: 1; transform: none; transition: opacity .6s ease, transform .6s cubic-bezier(.16, 1, .3, 1); }
+  .masthead .rise { transition-delay: calc(var(--i, 0) * 90ms); }
+}
+
+/* ---- narrow ------------------------------------------------------------ */
+@media (max-width: 820px) {
+  .board { grid-template-columns: 1fr 1fr; }
+  .board div:nth-child(3) { border-left: 0; }
+  .board div:nth-child(-n+2) { border-bottom: 1px solid var(--hair); }
+  .shots { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 680px) {
+  body { font-size: 16px; }
+  .rec, .cap { grid-template-columns: 1fr; gap: 12px; }
+  .rail { display: flex; gap: 10px; align-items: baseline; }
+  .rail .where { margin-top: 0; }
+  .rail .when::after { content: ' ·'; color: var(--line); }
+  .contact { grid-template-columns: 1fr; align-items: start; }
+  .stats div { border-left: 0; border-top: 1px solid var(--hair); }
+  .stats div:first-child { border-top: 0; }
+}
+
+@media (max-width: 460px) {
+  .board { grid-template-columns: 1fr; }
+  .board div { border-left: 0; border-bottom: 1px solid var(--hair); }
+  .board div:last-child { border-bottom: 0; }
+}
+
+/* ---- print: the page collapses to a plain CV --------------------------- */
+@media print {
+  :root { --bg: #fff; --surface: #fff; --sunk: #fff; --fg: #000; --muted: #333; --faint: #555; --line: #bbb; --hair: #ddd; --acc: #000; --acc-soft: #666; }
+  body { font-size: 10.5pt; line-height: 1.4; }
+  .theme, .actions, .shots, .shot, .no-print { display: none !important; }
+  section { padding-block: 14pt; break-inside: auto; }
+  .rec, .cap { break-inside: avoid; padding-block: 10pt; }
+  .h1 { font-size: 30pt; }
+  .h2 { font-size: 15pt; }
+  .h3 { font-size: 12pt; }
+  a { text-decoration: none; color: #000; }
+  .rise { opacity: 1 !important; transform: none !important; }
+}

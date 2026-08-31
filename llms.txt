@@ -1,0 +1,34 @@
+# Grant van Zyl
+
+> Operations and digital production professional based in Exeter, UK. Twenty-five years across logistics, licensed consumer goods, compliance, data services and vehicle operations. Currently a Defleet Advisor at Switch/Thrifty, and open to operations, administration, digital production and business development roles — on site, hybrid or remote.
+
+Grant builds the process where there isn't one, and increasingly the software that runs it. The two projects below are both active and unfinished — neither is a shipped, final product.
+
+## Pages
+
+- [Portfolio](https://ericdarkomen.github.io/AboutMe/): profile, career history, capabilities, project showcase, contact.
+- [CV](https://ericdarkomen.github.io/AboutMe/cv.html): the full curriculum vitae, also available as a [PDF](https://ericdarkomen.github.io/AboutMe/assets/Grant-van-Zyl-CV.pdf).
+
+## Projects (work in progress)
+
+- **LeanOS** — an operations suite for lean and operational excellence: sixty-one connected tools so far, covering SQCDP, OEE, 5S, SMED, value-stream mapping, FMEA, 8D and A3, wired to an order book, a stock ledger, payroll and a real set of books. Runs entirely in the browser on an OPFS-backed SQLite engine — no server, no account. Private repository.
+- **Call of Duty: Customer Service** — a call-centre role-playing game, roughly 28,000 lines of HTML, CSS and JavaScript with no build step and no dependencies, covered by twenty-three browser-driven test suites and shipping with its own level editor. Playable at https://ericdarkomen.github.io/CallHall/.
+
+## Career
+
+- Defleet Advisor, Switch / Thrifty (Scot Group Ltd) — Nov 2025–present, Exeter
+- Cargo Clerical Officer / Continuous Improvement Champion, IAG Cargo — 2020–2022, London Heathrow
+- Product Development / Digital Production / Data Services / IT, Grant and Bowman Ltd — 2007–2020
+- Business Development, Transfer 2000 — 2006–2007
+- Operations Management / Client Implementation, TNT Express (now FedEx) — 2002–2005
+
+## Skills
+
+Digital production (Adobe Illustrator & Photoshop, product design, licensed brand materials, sales copy and marketing content); AI-assisted development (Claude, Copilot, Cursor); software development (HTML5, CSS, JavaScript, C#, WordPress, Shopify, SharePoint, Unreal Engine, Unity); operations (multi-site management, business launch and remediation, process design); continuous improvement (Six Sigma DMAIC, Lean 5S, 5-Why RCA, Gemba walks); data and analysis (SQL, Excel — lookups, pivots, Power Query, DAX); administration (invoicing, V5 & DVLA documentation, records management).
+
+## Contact
+
+- LinkedIn: https://www.linkedin.com/in/grantvanzyl
+- GitHub: https://github.com/EricDarkomen
+
+Grant is open to new opportunities.
