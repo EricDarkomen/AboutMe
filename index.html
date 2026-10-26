@@ -16,7 +16,7 @@
 <meta property="og:url" content="https://ericdarkomen.github.io/AboutMe/">
 <meta property="og:title" content="Grant van Zyl — Operations, Digital Production &amp; Administration">
 <meta property="og:description" content="Twenty-five years of bringing order to complicated operations. Exeter, UK. Open to new opportunities.">
-<meta property="og:image" content="https://ericdarkomen.github.io/AboutMe/assets/img/leanos-hero.webp">
+<meta property="og:image" content="https://ericdarkomen.github.io/AboutMe/assets/img/longfall-title.webp">
 <meta name="twitter:card" content="summary_large_image">
 
 <!-- Structured data: one Person, shared by @id with cv.html, so a crawler or
@@ -50,7 +50,7 @@
       "@id": "https://ericdarkomen.github.io/AboutMe/#profile",
       "url": "https://ericdarkomen.github.io/AboutMe/",
       "name": "Grant van Zyl — Portfolio and Project Showcase",
-      "dateModified": "2026-08-31",
+      "dateModified": "2026-10-26",
       "mainEntity": { "@id": "https://ericdarkomen.github.io/AboutMe/#person" }
     }
   ]
@@ -112,7 +112,7 @@
     </div>
     <p class="lede">Twenty-five years across operations and product — freight, licensed consumer goods, data services, and now vehicle defleet. I build the process where there isn’t one. And the half of the job I do best is the half where something gets made: the product, the artwork, the copy, the tool that replaces the spreadsheet.</p>
     <p>The making has been there the whole time. At Grant and Bowman I took licensed product from concept to market with high-profile rights holders, produced the marketing content and sales copy around it, and ran the ecommerce channels it sold through. The operational half — compliance, migrations, continuous improvement — is what got it shipped and kept it legal.</p>
-    <p>The software is not a recent turn. I have been building tools alongside the day job for most of my career — properly, with tests, and lately with AI tooling as a force multiplier rather than a novelty. LeanOS, below, is twenty-five years of operations knowledge turned into the thing that runs it, and it is the work I am looking for more of.</p>
+    <p>The software is not a recent turn. I have been building tools alongside the day job for most of my career — properly, with tests, and lately with AI tooling as a force multiplier rather than a novelty. Long Fall, below, is where I am putting it now: a game, but under the story it is operations — jobs, queues, stock and supply — and it is the kind of work I am looking for more of.</p>
   </div>
 </section>
 
@@ -280,7 +280,7 @@
   <div class="wrap">
     <div class="sec-head">
       <h2 class="h2">Selected work</h2>
-      <span class="eyebrow">Two projects · built, not commissioned</span>
+      <span class="eyebrow">Active project · built, not commissioned</span>
     </div>
 
     <div class="work">
@@ -288,109 +288,58 @@
       <article class="proj">
       <div class="pitch">
        <div>
-        <p class="wip">Personal project · v1.24</p>
-        <h3 class="h3" style="margin-top:14px">LeanOS</h3>
-        <p class="employer">An operations suite for lean &amp; operational excellence · runs in the browser, no server</p>
-        <p>Most operations run continuous improvement across a dozen disconnected spreadsheets, a whiteboard and a shared drive nobody trusts. LeanOS is one connected suite instead: sixty-one tools covering what an operation actually runs on — the daily SQCDP board, 5S audits, OEE, SMED, value-stream maps, FMEA, 8D and A3 — wired to an order book, a stock ledger, payroll and a real set of books.</p>
-        <p>Every tool writes to one local store and feeds one maturity score, so a number on the dashboard is one hop from the cause behind it. It runs entirely in the browser on an OPFS-backed SQLite engine: no account, no server, and no data leaving the device unless you export it.</p>
-        <p>This is the project where the two halves of my CV meet — twenty-five years of operations and continuous improvement on one side, and the software to run it on the other.</p>
-       </div>
-
-       <div class="stats">
-        <div><span class="stat-n">61</span><span class="stat-l">connected<br>tools</span></div>
-        <div><span class="stat-n">8</span><span class="stat-l">operational<br>domains</span></div>
-        <div><span class="stat-n">84k</span><span class="stat-l">lines of<br>JS, CSS &amp; HTML</span></div>
-        <div><span class="stat-n">0</span><span class="stat-l">servers,<br>accounts or logins</span></div>
-       </div>
-      </div>
-
-      <figure class="shot">
-        <img src="assets/img/leanos-hero.webp" width="1600" height="1000" alt="The LeanOS landing page: a dark hero reading “The operating system for operational excellence”, beside a control-centre mock-up showing a maturity ring at 68 and the five SQCDP letters with status lights.">
-        <figcaption>LeanOS. One maturity engine, one SQCDP source of truth, sixty-one tools behind it.</figcaption>
-      </figure>
-
-      <figure class="shot">
-        <img src="assets/img/leanos-toolset.webp" width="1600" height="1000" alt="The LeanOS toolset grouped into domains — Safety &amp; Engagement and Delivery &amp; Supply — each a grid of numbered tool cards: Safety Cross, Shift Handover, Kaizen Event, Delivery/OTIF, Demand Planner, Supply Plan (MRP), Supplier Scorecard.">
-        <figcaption>The toolset, grouped by domain. Each card is a working tool, cross-linked to the others that feed it.</figcaption>
-      </figure>
-
-      <div class="notes">
-        <div class="note">
-          <h4>Built on the domain, not around it</h4>
-          <p>SQCDP, OEE, SMED, Bradford scores, OTIF, first-pass yield, cost of poor quality. I have worked with these on a real floor, which is why the tools ask the questions a supervisor actually asks rather than the ones that are easy to build.</p>
-        </div>
-        <div class="note">
-          <h4>Local-first, deliberately</h4>
-          <p>An improvement team cannot wait for an IT project. Everything lives in the browser on SQLite over OPFS — open the file and it runs. Where a browser can’t offer a durable store, the app says so rather than pretending.</p>
-        </div>
-        <div class="note">
-          <h4>One thread, prospect to cash</h4>
-          <p>An opportunity becomes a costed quote, a credit-checked sales order, a work order that draws its own bill of materials, a shipment, an invoice — and posts into the ledger, the VAT return and the cash forecast. Scrap lands in Cost of Quality on the way through.</p>
-        </div>
-      </div>
-
-      <p class="fine">The repository is private. I’m happy to walk through it or demonstrate it — it needs nothing but a browser.</p>
-      </article>
-
-      <article class="proj">
-      <div class="pitch">
-       <div>
-        <p class="wip">Work in progress</p>
-        <h3 class="h3" style="margin-top:14px">Call of Duty: Customer Service</h3>
-        <p class="employer">A call-centre RPG · HTML, CSS and JavaScript · no build step</p>
-        <p>You are a new trainee at CALLHALL Services plc. There are thirteen rooms, twenty colleagues, fourteen mugs, and a fourth floor that is not on the floor plan. Difficult calls are turn-based: your patience is your health, the caller’s frustration is what you are reducing.</p>
-        <p>It is a comedy about office work, and it is also the thing I point at when somebody asks what I can actually build. It runs in any browser, opens straight off a memory stick with no server, and ships with its own level editor and a browser-driven test suite.</p>
+        <p class="wip">Active project · in development</p>
+        <h3 class="h3" style="margin-top:14px">Long Fall</h3>
+        <p class="employer">A sci-fi story game and colony builder · HTML, CSS and JavaScript · no build step</p>
+        <p>Lured to the spaceport city of a dying world, you wake four hundred years later on a drowned island off Cornwall in 1631, with seven months missing and a radio speaking in your mother’s voice. Then you build a world back up, from flint to rockets.</p>
+        <p>Underneath the story it is an operations game. The colony runs in real time on the game’s clock: every colonist has a job, every building has a production queue, materials are carried from the store to the site a load at a time, and the food goes off at dusk. Ten ages of industry, each one built from what the age before it could make.</p>
+        <p>It is the project I am working on now, and the one I point at when somebody asks what I can actually build. It runs in any browser, opens straight off a memory stick with no server, and ships with its own level editor.</p>
         <nav class="actions" aria-label="Project links">
-          <a class="btn primary" href="https://ericdarkomen.github.io/CallHall/" rel="noopener">▶ Play it ↗</a>
-          <a class="btn" href="https://ericdarkomen.github.io/CallHall/editor.html" rel="noopener">Open the editor ↗</a>
-          <a class="btn" href="https://github.com/EricDarkomen/CallHall" rel="noopener">Source ↗</a>
+          <a class="btn primary" href="https://anomalycraft.com/longfall/" rel="noopener">▶ Play it ↗</a>
+          <a class="btn" href="https://anomalycraft.com/longfall/editor.html" rel="noopener">Open the editor ↗</a>
         </nav>
        </div>
 
        <div class="stats">
-        <div><span class="stat-n">28k</span><span class="stat-l">lines of<br>JS, CSS &amp; HTML</span></div>
+        <div><span class="stat-n">66k</span><span class="stat-l">lines of<br>JS, CSS &amp; HTML</span></div>
         <div><span class="stat-n">0</span><span class="stat-l">runtime<br>dependencies</span></div>
-        <div><span class="stat-n">23</span><span class="stat-l">browser<br>test suites</span></div>
-        <div><span class="stat-n">20</span><span class="stat-l">engine<br>systems</span></div>
-        <div><span class="stat-n">13</span><span class="stat-l">jobs and<br>storylines</span></div>
-        <div><span class="stat-n">3</span><span class="stat-l">playable<br>minigames</span></div>
+        <div><span class="stat-n">10</span><span class="stat-l">ages, stone<br>to space</span></div>
+        <div><span class="stat-n">104</span><span class="stat-l">buildings<br>to raise</span></div>
+        <div><span class="stat-n">80</span><span class="stat-l">characters<br>in the cast</span></div>
+        <div><span class="stat-n">3</span><span class="stat-l">checkers on<br>every change</span></div>
        </div>
       </div>
 
       <figure class="shot">
-        <img src="assets/img/showcase-office.webp" width="1600" height="1000" alt="The game running: an isometric-style pixel-art call centre floor with rows of desks, named colleagues, a heads-up display showing health, energy and experience, a clock reading 09:06, and a job tracker.">
-        <figcaption>The fourth floor, mid-shift. Every desk, colleague and object on screen is a record in a data file the editor can open.</figcaption>
+        <img src="assets/img/longfall-title.webp" width="1600" height="1000" alt="The Long Fall title screen: the name in large cream lettering over a banded sunset sun sinking into a violet sea, palms in silhouette either side, with the menu — Wake up, Play with friends, How to play — and a board reading Carrow, the Strand.">
+        <figcaption>The title, drawn live: the sky drifts, the birds go home and the board counts down to sunset.</figcaption>
       </figure>
 
       <div class="shots">
         <figure class="shot">
-          <img src="assets/img/showcase-editor.webp" width="1600" height="1000" alt="The level editor: a floor plan of the office with coloured, labelled rooms, a tool rail down the left, and an inspector panel listing 309 objects.">
-          <figcaption>The editor. Ten document types behind one shell, drawing the level with the game’s own renderer — so the preview is what the player gets.</figcaption>
+          <img src="assets/img/longfall-open.webp" width="1600" height="1000" alt="The animated opening: a night city skyline with lit windows under a huge dark red planet, searchlights sweeping and a ship crossing the sky, with a caption about Carrow, the spaceport city at the end of the world.">
+          <figcaption>The opening. The city has no map yet, so it is painted live behind the words.</figcaption>
         </figure>
         <figure class="shot">
-          <img src="assets/img/showcase-phone.webp" width="560" height="1212" alt="The same game on a phone: a single-bar heads-up display across the top, a floating analogue thumbstick and an E button at the bottom." style="max-height:520px;object-fit:cover;object-position:top">
-          <figcaption>The same code on a phone. A floating analogue stick, a measured HUD, and a layout that mirrors for left-handers.</figcaption>
+          <img src="assets/img/longfall-colony.webp" width="1600" height="1000" alt="The colony on its first morning: pixel-art survivors round a campfire on a grassy island beside a crashed lander and a row of cryo pods on the beach, with the date 24 June 1631, each colonist’s job down the left, the age’s goals top right and the clock controls bottom right.">
+          <figcaption>Day one, 24 June 1631. Everybody’s job down the left, what the age needs next on the right.</figcaption>
         </figure>
       </div>
 
       <div>
-        <h3 class="h3" style="margin-bottom:22px">Four decisions worth explaining</h3>
+        <h3 class="h3" style="margin-bottom:22px">Three decisions worth explaining</h3>
         <div class="notes">
           <div class="note">
+            <h4>The tech tree is checked, not trusted</h4>
+            <p>Every step of every age has to be makeable from what that age can have. A checker walks the whole tree on each change and catches loops a person would miss — tin that needs a trading stone that costs bronze.</p>
+          </div>
+          <div class="note">
             <h4>No build step, on purpose</h4>
-            <p>Modern JavaScript modules are <em>fetched</em>, and a page opened off a local disk is not allowed to fetch. Plain scripts are <em>loaded</em>. So the game opens from a folder with no server, no install and no toolchain — and the test suite proves it on every run.</p>
+            <p>Modern JavaScript modules are <em>fetched</em>, and a page opened off a local disk is not allowed to fetch. Plain scripts are <em>loaded</em>. So the game opens from a folder with no server, no install and no toolchain.</p>
           </div>
           <div class="note">
-            <h4>The tests drive a real browser</h4>
-            <p>Twenty-three suites in headless Chromium, across phones and desktops. They caught faults nothing else would: a set of Christmas decorations that sealed a room off, and a waypoint placed on a sink that walked staff into the basin.</p>
-          </div>
-          <div class="note">
-            <h4>Validation where the work happens</h4>
-            <p>The editor runs ten cross-file checks as you type — a job pointing at furniture that has been moved, dialogue nobody can reach, a reward nothing can hand out. The class of fault that is invisible on screen and expensive later.</p>
-          </div>
-          <div class="note">
-            <h4>Licence enforced by the build</h4>
-            <p>The artwork is third-party. The sprite build reads each asset’s upstream licence data and refuses to produce a sheet if anything falls outside the permitted terms. Compliance is a check that fails, not a note in a file.</p>
+            <h4>Licence and credit as part of the build</h4>
+            <p>The artwork is third-party kits, cut and packed by scripts that keep only what the game names. Every kit is credited with its provenance, and the story bible stays out of the published build by rule, not by memory.</p>
           </div>
         </div>
       </div>

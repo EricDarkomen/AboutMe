@@ -2,17 +2,16 @@
 
 > Operations and digital production professional based in Exeter, UK. Twenty-five years across logistics, licensed consumer goods, compliance, data services and vehicle operations. Currently a Defleet Advisor at Switch/Thrifty, and open to operations, administration, digital production and business development roles — on site, hybrid or remote.
 
-Grant builds the process where there isn't one, and increasingly the software that runs it. The two projects below are both active and unfinished — neither is a shipped, final product.
+Grant builds the process where there isn't one, and increasingly the software that runs it. His active project, below, is unfinished — not a shipped, final product.
 
 ## Pages
 
 - [Portfolio](https://ericdarkomen.github.io/AboutMe/): profile, career history, capabilities, project showcase, contact.
 - [CV](https://ericdarkomen.github.io/AboutMe/cv.html): the full curriculum vitae, also available as a [PDF](https://ericdarkomen.github.io/AboutMe/assets/Grant-van-Zyl-CV.pdf).
 
-## Projects (work in progress)
+## Active project (work in progress)
 
-- **LeanOS** — an operations suite for lean and operational excellence: sixty-one connected tools so far, covering SQCDP, OEE, 5S, SMED, value-stream mapping, FMEA, 8D and A3, wired to an order book, a stock ledger, payroll and a real set of books. Runs entirely in the browser on an OPFS-backed SQLite engine — no server, no account. Private repository.
-- **Call of Duty: Customer Service** — a call-centre role-playing game, roughly 28,000 lines of HTML, CSS and JavaScript with no build step and no dependencies, covered by twenty-three browser-driven test suites and shipping with its own level editor. Playable at https://ericdarkomen.github.io/CallHall/.
+- **Long Fall** — a sci-fi story game and real-time colony builder for the browser, roughly 66,000 lines of HTML, CSS and JavaScript with no build step and no dependencies. Ten ages from flint to rockets, built on an operations model (jobs, production queues, stock, haulage, spoilage), with its own level editor. Playable at https://anomalycraft.com/longfall/.
 
 ## Career
 
